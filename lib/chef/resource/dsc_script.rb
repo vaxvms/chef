@@ -26,11 +26,10 @@ class Chef
 
       def initialize(name, run_context=nil)
         super
+        @resource_name = :dsc_script
         @allowed_actions.push(:run)
         @action = :run
-        if(run_context && Chef::Platform.supports_dsc?(run_context.node))
-          @provider = Chef::Provider::DscScript
-        else
+        if(!run_context || !Chef::Platform.supports_dsc?(run_context.node))
           raise Chef::Exceptions::NoProviderAvailable,
             "#{powershell_info_str(run_context)}\nPowershell 4.0 or higher was not detected on your system and is required to use the dsc_script resource."
         end

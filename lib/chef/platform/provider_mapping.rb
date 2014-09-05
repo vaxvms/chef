@@ -277,7 +277,8 @@ class Chef
                 :group => Chef::Provider::Group::Windows,
                 :mount => Chef::Provider::Mount::Windows,
                 :batch => Chef::Provider::Batch,
-                :powershell_script => Chef::Provider::PowershellScript
+                :powershell_script => Chef::Provider::PowershellScript,
+                :dsc_script => Chef::Provider::DscScript
               }
             },
             :mingw32 => {
@@ -288,7 +289,8 @@ class Chef
                 :group => Chef::Provider::Group::Windows,
                 :mount => Chef::Provider::Mount::Windows,
                 :batch => Chef::Provider::Batch,
-                :powershell_script => Chef::Provider::PowershellScript
+                :powershell_script => Chef::Provider::PowershellScript,
+                :dsc_script => Chef::Provider::DscScript
               }
             },
             :windows => {
@@ -299,7 +301,8 @@ class Chef
                 :group => Chef::Provider::Group::Windows,
                 :mount => Chef::Provider::Mount::Windows,
                 :batch => Chef::Provider::Batch,
-                :powershell_script => Chef::Provider::PowershellScript
+                :powershell_script => Chef::Provider::PowershellScript,
+                :dsc_script => Chef::Provider::DscScript
               }
             },
             :solaris  => {},
