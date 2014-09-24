@@ -3,7 +3,7 @@
 # our .kitchen.yml and .kitchen.travis.yml and added the appropriate JSON under test/fixtures/platforms.
 
 require 'serverspec'
-require 'json'
+require 'ffi_yajl'
 
 include SpecInfra::Helper::Exec
 include SpecInfra::Helper::DetectOS
@@ -61,7 +61,7 @@ end
 
 def load_nodestub(ohai)
   puts "loading #{ohai[:platform]}/#{ohai[:platform_version]}"
-  JSON.parse(IO.read("#{ENV['BUSSER_ROOT']}/../kitchen/data/platforms/#{ohai[:platform]}/#{ohai[:platform_version]}.json"), :symbolize_names => true)
+  FFI_Yajl::Encoder.parse(IO.read("#{ENV['BUSSER_ROOT']}/../kitchen/data/platforms/#{ohai[:platform]}/#{ohai[:platform_version]}.json"), :symbolize_names => true)
 end
 
 RSpec.configure do |config|
