@@ -61,7 +61,7 @@ end
 
 def load_nodestub(ohai)
   puts "loading #{ohai[:platform]}/#{ohai[:platform_version]}"
-  FFI_Yajl::Encoder.parse(IO.read("#{ENV['BUSSER_ROOT']}/../kitchen/data/platforms/#{ohai[:platform]}/#{ohai[:platform_version]}.json"), :symbolize_names => true)
+  FFI_Yajl::Parser.parse(IO.read("#{ENV['BUSSER_ROOT']}/../kitchen/data/platforms/#{ohai[:platform]}/#{ohai[:platform_version]}.json"), :symbolize_names => true)
 end
 
 RSpec.configure do |config|
