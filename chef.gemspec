@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency "mixlib-shellout", ">= 2.0.0.rc.0", "< 3.0"
   s.add_dependency "ohai", ">= 7.6.0.rc.0"
 
+  s.add_dependency "ffi", "~> 1.9.3", "<= 1.9.3"
   s.add_dependency "ffi-yajl", "~> 1.0", ">= 1.0.2"
   s.add_dependency "net-ssh", "~> 2.6"
   s.add_dependency "net-ssh-multi", "~> 1.1"
