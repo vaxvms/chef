@@ -13,11 +13,16 @@ provisioner:
   data_path: test/fixtures
 
 platforms:
-  - name: ubuntu-10.04
+#  - name: ubuntu-10.04
+#    run_list: apt::default
   - name: ubuntu-12.04
-  - name: ubuntu-13.04
+    run_list: apt::default
+#  - name: ubuntu-13.04
+#    run_list: apt::default
   - name: centos-6.4
+    run_list: yum-epel::default
   - name: centos-5.9
+    run_list: yum-epel::default
 
 suites:
   - name: webapp
