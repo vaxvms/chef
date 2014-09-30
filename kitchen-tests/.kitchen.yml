@@ -21,8 +21,8 @@ platforms:
 #    run_list: apt::default
   - name: centos-6.4
     run_list: yum-epel::default
-  - name: centos-5.9
-    run_list: yum-epel::default
+#  - name: centos-5.9
+#    run_list: yum-epel::default
 
 suites:
   - name: webapp
