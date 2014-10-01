@@ -31,7 +31,7 @@ platforms:
       security_group_ids: ["travis-ci"]
       image_id: ami-b3bf2f83
       flavor_id: m3.medium
-      username: ec2-user
+      username: root
 
 suites:
   - name: webapp
